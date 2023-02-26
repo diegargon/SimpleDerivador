@@ -15,22 +15,27 @@ Need receive the grid power by MQTT. Not support reading from  solar inverters o
 
 ## Current Status
   * Initial/Beta .
-  * Works for very basic usage.
+  * Works for very basic usage, first write.
+
+## Last Changes
+  * Preliminary HA auto-discovery implementation
+  * Publish derivation to MQTT 
+  * ALT Wifi
+  * Many
 
 ## USAGE
 
 Edit SimpleDerivador.ino the configuration section and burn with Arduino.
 
 ## NEXT FEATURES
-  * Some code rewrites
-  * Add alt wifi
-  * Publish to MQTT derivation
-  * MASTER/SLAVES mode
+  * Rewrite
 
 ## LONG TERM FEATURES
-  * Relay
+  * MASTER/SLAVES mode
+  * Relay supports
   * web interface (very basic interface)
-  
+  * Power Meter (using a clamp)
+
 ## Q&A
 
 Will you add support for read data directly from inverter? probably not (i will not add), 
@@ -41,14 +46,17 @@ Will you add support for read data directly from a shelly device? perhaps, not a
 ## Testing Software:
 
 Arduino 2.0.3
+Mosquitto MQTT Server
 
 ## Testing Hardware (Aliexpress):
+
+Shelby EM sending MQTT 
 
 Dimmer HL 24A-600V - 14€
 
 ESP32 with OLED (htit-wb32) - 14€
 
-## Librarys:
+## Librarys dependencies:
 
 ArduinoSTL - Basic by Mike Matera
 
@@ -57,3 +65,5 @@ U8g2 for Screen by oliver
 PubSubClient for MQTT by Nick O'Leary
 
 Dimmable Light for Arduino by Fabiano Riccardi
+
+ArduinoJson by Benoit Blanchon

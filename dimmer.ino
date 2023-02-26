@@ -1,7 +1,7 @@
 
 void init_dimmer() {
   Serial.println();
-  Serial.print("Initializing the dimmable light class... ");
+  Serial.print("Initializing dimmer... ");
   DimmableLightLinearized::setSyncPin(syncPin);
   DimmableLightLinearized::begin();
   Serial.println("Done!");
