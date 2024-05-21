@@ -8,7 +8,7 @@ char chBuffer[BUFF_LEN];
 
 U8G2_SSD1306_128X64_NONAME_F_HW_I2C u8g2(U8G2_R0, 16, 15, 4);
 
-void init_oled(char *wifiSSID) {
+void init_oled(const char *wifiSSID) {
 
   u8g2.begin();
   u8g2.setFont(u8g2_font_6x10_tr);
@@ -29,10 +29,10 @@ void init_oled(char *wifiSSID) {
 void draw_screen(int grid_power, int solar_power, int derivation, int mqtt_status, int mqtt_reconnections) {
   // Display connection stats.
 
-  // Clean the display buffer.  
+  // Clean the display buffer.
   u8g2.clearBuffer();
   u8g2.clearDisplay();
-  
+
   // Display the title.
 
   sprintf(chBuffer, "%s", "[WiFi Stats]");
@@ -47,24 +47,22 @@ void draw_screen(int grid_power, int solar_power, int derivation, int mqtt_statu
 
   // Display the ssid of the wifi router.
 
-  sprintf(chBuffer, "SSID:%s RSSI:%d", WiFi.SSID(), WiFi.RSSI());  
+  sprintf(chBuffer, "SSID:%s RSSI:%d", WiFi.SSID(), WiFi.RSSI());
   u8g2.drawStr(0, FONT_ONE_HEIGHT * 2, chBuffer);
 
   //MQTT Status / Reconnections
   sprintf(chBuffer, "MQTT: %d/%d", mqtt_status, mqtt_reconnections);
   u8g2.drawStr(0, FONT_ONE_HEIGHT * 3, chBuffer);
 
-
-  //sprintf(chBuffer, "Power: %.0f Solar: %.0f", atof(power),atof(solar));  
+  //sprintf(chBuffer, "Power: %.0f Solar: %.0f", atof(power),atof(solar));
   sprintf(chBuffer, "Grid:%d Solar:%d", grid_power, solar_power);
   u8g2.drawStr(0, FONT_ONE_HEIGHT * 4, chBuffer);
 
   //sprintf(chBuffer, "Solar: %.0f", atof(solar));
   //u8g2.drawStr(0, FONT_ONE_HEIGHT * 6, chBuffer);
 
-  sprintf(chBuffer, "Derivation: %d%%", derivation);  
+  sprintf(chBuffer, "Derivation: %d%%", derivation);
   u8g2.drawStr(0, FONT_ONE_HEIGHT * 5, chBuffer);
-  
+
   u8g2.sendBuffer();
 }
-
