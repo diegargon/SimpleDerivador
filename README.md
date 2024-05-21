@@ -3,7 +3,7 @@
 **Español**
 
 Derivador excedentes de energia solar, más simple que freeds, para placas chinas
-
+test
 Necesita recibir la energia del grid por MQTT. No soporta la lectura de  inversores u otros.
 
 **English**
