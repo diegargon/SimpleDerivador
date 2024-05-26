@@ -31,8 +31,16 @@ const char *MQTT_SERVER = "192.168.2.74";
 const char *MQTT_USER = "mqtt";
 const char *MQTT_PASS = "mqttpassword";
 const uint16_t MQTT_PORT = 1883;
+
+/*
+    REQUERIMENT: Where get the Power grid input/output data.
+    Where a positive value mean we suck from the grid  
+    and a negative value mean we are injecting solar energy to the grid
+*/
+
 const char *MQTT_GRID_POWER = "shellies/shellyem-C45BBE6A8DCA/emeter/0/power";
-/* NOT RELEVANT, just for display, set to NULL without "" if not use */
+
+// NOT RELEVANT, just for display, set to NULL without "" if not use
 const char *MQTT_SOLAR_POWER_1 = "shellies/shellyem-C45BBE780ED8/emeter/0/power";
 const char *MQTT_SOLAR_POWER_2 = "shellies/shellyem-C45BBE780ED8/emeter/1/power";
 
