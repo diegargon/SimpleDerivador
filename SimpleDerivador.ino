@@ -13,11 +13,11 @@
 
 /* Logic Configuration */
 
-//When begin to derivate (Watt)
-const int beginDerivation = -100;
-// Keep current power if power fluctuate within +- XX Watss
+// When begin to derivate in input watt (Default: -100)
+const int beginDerivation = -100; 
+// Keep current power if power fluctuate within +- XX Watss (Default: 25)
 const int keepCurrentMargin = 25;
-// Max Power percent 100% allowed
+// Max Power percent (Default 100) 100% allowed
 const int maxPower = 100;
 
 // Your wifi config
@@ -40,7 +40,7 @@ const uint16_t MQTT_PORT = 1883;
 
 const char *MQTT_GRID_POWER = "shellies/shellyem-C45BBE6A8DCA/emeter/0/power";
 
-// NOT RELEVANT, just for display, set to NULL without "" if not use
+// NOT RELEVANT now, just for display in OLED screen, set to NULL without "" if not use
 const char *MQTT_SOLAR_POWER_1 = "shellies/shellyem-C45BBE780ED8/emeter/0/power";
 const char *MQTT_SOLAR_POWER_2 = "shellies/shellyem-C45BBE780ED8/emeter/1/power";
 

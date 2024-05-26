@@ -59,11 +59,12 @@ corresponding pins (SimpleDerivador)
   * web interface (very basic interface)
   * Optional ESP32 Power Meter option (using a clamp)
 
-## Q&A
+## FAQ/Q&A
 
-Will you add support for read data directly from X inverter? probably not (i will not add), 
+Will you add support for read data directly from X solar inverter? I will not add, and probably if someone want add 
+first we need some code cleanup and rewrite. 
 
-Will you add support for read data directly from a shelly device? perhaps, not a priority
+Will you add support for read data directly from a shelly device? Yes. Need a rewrite for make MQTT optional but yes i planning add it.
 
 
 ## Testing Software:
@@ -80,6 +81,7 @@ Arduino 2.0.3
   * ESP32 with OLED (htit-wb32) - 14€ - Aliexpress (mst work with any esp32 with or without U8g2 screen)
   * 1500w/100L Electric Water Heater
   * 1000w Electric Stove
+
 ## Librarys dependencies:
 
   * ArduinoSTL - Basic by Mike Matera
@@ -90,7 +92,9 @@ Arduino 2.0.3
 
 ## Electric Water Heater Stats
 
-I don't currently have much excess energy. If the sun is good, a total of 800W, but mostly between 300W-500W. The water heater has a capacity of 100L, 
+I don't currently have much excess energy. If the sun is good, peaks of 800W, but mostly between 300W-500W. The water heater has a capacity of 100L, 
 and with one shower a day, as long as there are no cloudy days, it maintains (derives about 3kW daily). With two showers, it falls short, so I probably 
-need around 5kW daily. For winter, I definitely need more solar panels. I also use HA+PVPC automatation to force the heater to turn on for a couple of hours during 
-the lowest electricity tariff when necessary (cloudy days or two showers in a day).
+need around 5kW daily. For winter, I definitely need more solar panels. 
+
+I also use HA+PVPC automatation to force the heater to turn on for 3 hours during  the lowest electricity tariff when is necessary (cloudy days or 
+two showers in a day).
